@@ -32,3 +32,8 @@
       margin-bottom: 15px;
   }
 }
+
+/* Custom here */
+h4.ui.header {
+    margin-top: 0.5rem;
+}

@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Button, Container, Dropdown, Grid, Header, Image, Input, Menu, Segment } from 'semantic-ui-react';
 import './App.css';
-
-const styleForm = {
-  width: 160,
-}
 
 const marginTop = {
   marginTop: 30,
 }
 
-var apiURL = 'https://api.coinmarketcap.com/v1/ticker/?limit=150';
+const options = [
+  { key: '.com', text: '.com', value: '.com' },
+  { key: '.net', text: '.net', value: '.net' },
+  { key: '.org', text: '.org', value: '.org' },
+]
+
+var apiURL = 'https://api.coinmarketcap.com/v1/ticker/?limit=200';
 var xhr = new XMLHttpRequest();
 xhr.open('GET', apiURL, false);
 xhr.send();
@@ -25,14 +27,22 @@ class App extends Component {
       amountIOTA: '0',
       amountSUB: '0',
       amountDATA: '0',
+      amountINT: '0',
       rateDRGN: '',
       rateIOTA: '',
       rateSUB: '',
       rateDATA: '',
+      rateINT:'',
+      rateDRGNPrint: '',
+      rateIOTAPrint: '',
+      rateSUBPrint: '',
+      rateDATAPrint: '',
+      rateINTPrint: '',
       valueDRGN: '0',
       valueIOTA: '0',
       valueSUB: '0',
       valueDATA: '0',
+      valueINT: '0',
       valueAll: '0'
     };
 
@@ -40,6 +50,7 @@ class App extends Component {
     this.handleChangeIOTA = this.handleChangeIOTA.bind(this);
     this.handleChangeSUB = this.handleChangeSUB.bind(this);
     this.handleChangeDATA = this.handleChangeDATA.bind(this);
+    this.handleChangeINT = this.handleChangeINT.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -63,6 +74,11 @@ class App extends Component {
     console.log('DATA: ' + this.state.amountDATA);
   }
 
+  handleChangeINT(event) {
+    this.setState({amountINT: event.target.value});
+    console.log('INT: ' + this.state.amountINT);
+  }
+
   // handleChangeCustom(event){
   //   this.
   // }
@@ -70,58 +86,81 @@ class App extends Component {
   handleSubmit(event) {
     //calculate DRGN
     for(var i = 0; i < data.length; i++) {
-      if(data[i].symbol == 'DRGN') {
+      if(data[i].symbol === 'DRGN') {
         var rateDRGN = data[i].price_usd;
+        var rateDRGNPrint = ('($ ' + rateDRGN + ')');
         const resultCalcRawDRGN = parseFloat(rateDRGN) * parseFloat(this.state.amountDRGN);
         const resultCalcDRGN = resultCalcRawDRGN.toFixed(2);
-        console.log();
         console.log('DRGN: ' + this.state.amountDRGN + " | Rate: " + rateDRGN + ' | ' + resultCalcRawDRGN);
         console.log("DRGN: You have Dragon's in worth of " + resultCalcDRGN + " Dollar");
         this.setState ( {
-          valueDRGN: resultCalcDRGN,
-          rateDRGN: rateDRGN
+          rateDRGN: rateDRGN,
+          rateDRGNPrint: rateDRGNPrint,
+          valueDRGN: resultCalcDRGN
         });
       }
     };
     //calculate IOTA
     for(var i = 0; i < data.length; i++) {
-      if(data[i].symbol == 'MIOTA') {
+      if(data[i].symbol === 'MIOTA') {
         var rateIOTA = data[i].price_usd;
+        var rateIOTAPrint = ('($ ' + rateIOTA + ')');
         const resultCalcRawIOTA = parseFloat(rateIOTA) * parseFloat(this.state.amountIOTA);
         const resultCalcIOTA = resultCalcRawIOTA.toFixed(2);
         console.log('IOTA: ' + this.state.amountIOTA + " | Rate: " + rateIOTA + ' | ' + resultCalcRawIOTA);
         console.log("IOTA: You have IOTA's in worth of " + resultCalcIOTA + " Dollar");
         this.setState ( {
-          valueIOTA: resultCalcIOTA,
-          rateIOTA: rateIOTA
+          rateIOTA: rateIOTA,
+          rateIOTAPrint: rateIOTAPrint,
+          valueIOTA: resultCalcIOTA
         });
       }
     };
     //calculate Substratum
     for(var i = 0; i < data.length; i++) {
-      if(data[i].symbol == 'SUB') {
+      if(data[i].symbol === 'SUB') {
         var rateSUB = data[i].price_usd;
+        var rateSUBPrint = ('($ ' + rateSUB + ')');
         const resultCalcRawSUB = parseFloat(rateSUB) * parseFloat(this.state.amountSUB);
         const resultCalcSUB = resultCalcRawSUB.toFixed(2);
         console.log('SUB: ' + this.state.amountSUB + " | Rate: " + rateSUB + ' | ' + resultCalcRawSUB);
         console.log("SUB: You have SUB's in worth of " + resultCalcSUB + " Dollar");
         this.setState ( {
-          valueSUB: resultCalcSUB,
-          rateSUB: rateSUB
+          rateSUB: rateSUB,
+          rateSUBPrint: rateSUBPrint,
+          valueSUB: resultCalcSUB
         });
       }
     };
     //calculate DATA
     for(var i = 0; i < data.length; i++) {
-      if(data[i].symbol == 'DATA') {
+      if(data[i].symbol === 'DATA') {
         var rateDATA = data[i].price_usd;
+        var rateDATAPrint = ('($ ' + rateDATA + ')');
         const resultCalcRawDATA = parseFloat(rateDATA) * parseFloat(this.state.amountDATA);
         const resultCalcDATA = resultCalcRawDATA.toFixed(2);
         console.log('DATA: ' + this.state.amountDATA + " | Rate: " + rateDATA + ' | ' + resultCalcRawDATA);
         console.log("DATA: You have DATA's in worth of " + resultCalcDATA + " Dollar");
         this.setState ( {
-          valueDATA: resultCalcDATA,
-          rateDATA: rateDATA
+          rateDATA: rateDATA,
+          rateDATAPrint: rateDATAPrint,
+          valueDATA: resultCalcDATA
+        });
+      }
+    };
+    //calculate INT
+    for(var i = 0; i < data.length; i++) {
+      if(data[i].symbol === 'INT') {
+        var rateINT = data[i].price_usd;
+        var rateINTPrint = ('($ ' + rateINT + ')');
+        const resultCalcRawINT = parseFloat(rateINT) * parseFloat(this.state.amountINT);
+        const resultCalcINT = resultCalcRawINT.toFixed(2);
+        console.log('INT: ' + this.state.amountINT + " | Rate: " + rateINT + ' | ' + resultCalcRawINT);
+        console.log("INT: You have INT's in worth of " + resultCalcINT + " Dollar");
+        this.setState ({
+          rateINT: rateINT,
+          rateINTPrint: rateINTPrint,
+          valueINT: resultCalcINT
         });
       }
     };
@@ -138,48 +177,128 @@ class App extends Component {
       Number(this.state.valueDRGN) +
       Number(this.state.valueIOTA) +
       Number(this.state.valueSUB) +
-      Number(this.state.valueDATA)).toFixed(2);
+      Number(this.state.valueDATA) +
+      Number(this.state.valueINT)).toFixed(2);
     return (
       <div className="App">
-      <div class="container">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
-        <h1>Crypto Coin Calculator</h1>
-        <form onSubmit={this.handleSubmit} style={marginTop}>
-        <div class="row">
-          <div class="col-md-3">
-              <label><b>Dragonchain</b></label>
-              <input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeDRGN} class="form-control"  placeholder="Enter amount"/>
-              <b>{this.state.valueDRGN}</b> Dollar<br />
-              (Rate: {this.state.rateDRGN} USD)
-           </div>
-           <div class="col-md-3">
-              <label><b>IOTA</b></label>
-              <input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeIOTA} class="form-control" placeholder="Enter amount"/>
-              IOTA: <b>{this.state.valueIOTA}</b> Dollar<br />
-              (Rate: {this.state.rateIOTA} USD)
-           </div>
-           <div class="col-md-3">
-             <label><b>Substratum</b></label>
-             <input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeSUB} class="form-control" placeholder="Enter amount"/>
-             Substratum: <b>{this.state.valueSUB}</b> Dollar<br />
-             (Rate: {this.state.rateSUB} USD)
-          </div>
-           <div class="col-md-3">
-              <label><b>Streamr DATAcoin</b></label>
-              <input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeDATA} class="form-control" placeholder="Enter amount"/>
-              Streamr DATAcoin: <b>{this.state.valueDATA}</b> Dollar<br />
-              (Rate: {this.state.rateDATA} USD)
-           </div>
-          </div>
-        <div class="row" style={marginTop}>
-        <div class="col align-self-center">
-         <h3>All coins together: {calcAll} Dollar</h3>
-         <p><input type="submit" value="Calculate" class="btn btn-primary"/></p>
-         </div>
-         </div>
-       </form>
-       </div>
-      </div>
+      <Menu pointing>
+        <Menu.Item>
+          <Header as='h1'>Real Time Crypto Calculator</Header>
+        </Menu.Item>
+      </Menu>
+      <Container>
+        <form onSubmit={this.handleSubmit}>
+          <Grid stackable columns='equal'>
+            <Grid.Row>
+              <Grid.Column>
+                <Segment.Group horizontal>
+                  <Segment>
+                    <Image
+                      src={require('./icons/drgn@2x.png')}
+                      centered
+                    />
+                    <Header as='h4'>Dragonchain</Header>
+                    {this.state.rateDRGNPrint}
+                  </Segment>
+                  <Segment>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeDRGN} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueDRGN}</Header>
+                  </Segment>
+                </Segment.Group>
+              </Grid.Column>
+              <Grid.Column>
+                <Segment.Group horizontal>
+                  <Segment>
+                    <Image
+                      src={require('./icons/miota@2x.png')}
+                      centered
+                    />
+                    <Header as='h4'>IOTA</Header>
+                    {this.state.rateIOTAPrint}
+                  </Segment>
+                  <Segment>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeIOTA} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueIOTA}</Header>
+                  </Segment>
+                </Segment.Group>
+              </Grid.Column>
+              <Grid.Column>
+                <Segment.Group horizontal>
+                  <Segment>
+                    <Image
+                      src={require('./icons/sub@2x.png')}
+                      centered
+                    />
+                    <Header as='h4'>Substratum</Header>
+                    {this.state.rateSUBPrint}
+                  </Segment>
+                  <Segment>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeSUB} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueSUB}</Header>
+                  </Segment>
+                </Segment.Group>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+            <Grid.Column>
+              <Segment.Group horizontal>
+                <Segment>
+                  <Image
+                    src={require('./icons/data@2x.png')}
+                    centered
+                  />
+                  <Header as='h4'>DATA</Header>
+                  {this.state.rateSUBPrint}
+                </Segment>
+                <Segment>
+                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeDATA} className="form-control"  placeholder="Enter amount"/>
+                  <Header as='h3'>$ {this.state.valueDATA}</Header>
+                </Segment>
+              </Segment.Group>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment.Group horizontal>
+                <Segment>
+                  <Image
+                    src={require('./icons/int@2x.png')}
+                    centered
+                  />
+                  <Header as='h4'>INT</Header>
+                  {this.state.rateINTPrint}
+                </Segment>
+                <Segment>
+                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeINT} className="form-control"  placeholder="Enter amount"/>
+                  <Header as='h3'>$ {this.state.valueINT}</Header>
+                </Segment>
+              </Segment.Group>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment.Group horizontal>
+                <Segment>
+                  <Image
+                    src={require('./icons/int@2x.png')}
+                    centered
+                  />
+                  <Header as='h4'>Custom</Header>
+                  {this.state.rateINTPrint}
+                </Segment>
+                <Segment>
+                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeINT} className="form-control"  placeholder="Enter amount"/>
+                  <Header as='h3'>$ {this.state.valueINT}</Header>
+                </Segment>
+              </Segment.Group>
+            </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
+                <Header as='h3'>All coins together: $ {calcAll}</Header>
+                <input type="submit" value="Calculate" className="ui primary button"/>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </form>
+      </Container>
+    </div>
     );
   }
 }
