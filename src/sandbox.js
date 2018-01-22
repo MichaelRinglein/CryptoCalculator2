@@ -1,38 +1,12 @@
-import React, { Component } from 'react'
-import { Dropdown, Grid, Segment } from 'semantic-ui-react'
+import React from 'react';
+import { Button, Container, Grid, Header, Input, Menu, Segment } from 'semantic-ui-react';
 
-const options = [
-  { key: 1, text: 'One', value: 1 },
-  { key: 2, text: 'Two', value: 2 },
-  { key: 3, text: 'Three', value: 3 },
-]
-
-export default class DropdownExampleControlled extends Component {
-  state = {}
-
-  handleChange = (e, { value }) => this.setState({ value })
-
+export default class Sandbox extends React.Component {
   render() {
-    const { value } = this.state
-    console.log(this.state.value);
-
     return (
-      <Grid columns={2}>
-        <Grid.Column>
-          <Dropdown
-            onChange={this.handleChange}
-            options={options}
-            placeholder='Choose an option'
-            selection
-            value={value}
-          />
-        </Grid.Column>
-        <Grid.Column>
-          <Segment secondary>
-            <pre>Current value: {value}</pre>
-          </Segment>
-        </Grid.Column>
-      </Grid>
-    )
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    );
   }
 }

@@ -1,0 +1,45 @@
+<html>
+
+<!-- 
+The only purpose of this file is to get the key, name and id of the cryptos into the console of the browser.
+From there they can be saved into JSON in order to create the cryptos.json file. 
+-->
+
+<h1>Sandbox</h1>
+<button onClick="sort()">Sort</button>
+<div id="outputAll"></div>
+</html>
+
+<script type="text/javascript">
+//API Request
+var request = new XMLHttpRequest();
+request.onreadystatechange = (e) => {
+  if (request.readyState !== 4) {
+	return;
+  }
+  if (request.status === 200) {
+	console.log('success, data is here');
+  } else {
+	console.warn('error');
+  }
+};
+
+//Get API data
+request.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?limit=300', false);
+request.send();
+var data = JSON.parse(request.responseText);
+
+//Sorting the data, putting it out to console and into HTML
+function sort() {
+	console.log("coinOptions = [");
+	for(var i = 0; i < data.length; i++) {
+		var symbolCoin = data[i].symbol;
+		var nameCoin = data[i].name;
+		var keyCoin = data[i].id;
+		console.log(
+			"{key: '" + symbolCoin + "', " + "text: '" +  nameCoin + "', " + "value: '" + symbolCoin + "'}, "
+		);
+    }
+	console.log(']');
+}
+</script>
