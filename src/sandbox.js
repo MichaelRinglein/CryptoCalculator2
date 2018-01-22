@@ -1,58 +1,38 @@
-import React from 'react';
-import { Button, Container, Dropdown, Grid, Header, Input, Menu, Segment } from 'semantic-ui-react';
-import 'semantic-ui-css/semantic.min.css';
+import React, { Component } from 'react'
+import { Dropdown, Grid, Segment } from 'semantic-ui-react'
 
 const options = [
-  { key: '.com', text: '.com', value: '.com' },
-  { key: '.net', text: '.net', value: '.net' },
-  { key: '.org', text: '.org', value: '.org' },
+  { key: 1, text: 'One', value: 1 },
+  { key: 2, text: 'Two', value: 2 },
+  { key: 3, text: 'Three', value: 3 },
 ]
 
-export default class Sandbox extends React.Component {
+export default class DropdownExampleControlled extends Component {
+  state = {}
+
+  handleChange = (e, { value }) => this.setState({ value })
+
   render() {
+    const { value } = this.state
+    console.log(this.state.value);
+
     return (
-      <div>
-      <Menu pointing>
-        <Menu.Item>
-          <Header as='h1'>Real Time Crypto Calculator</Header>
-        </Menu.Item>
-      </Menu>
-        <Container>
-          <Grid columns='equal'>
-            <Grid.Row>
-              <Grid.Column>
-                <Input
-                  label={<Dropdown defaultValue='.com' options={options} />}
-                  labelPosition='right'
-                  placeholder='Find domain'
-                  type='numeric'
-                />
-              </Grid.Column>
-              <Grid.Column>
-                <Segment>2</Segment>
-              </Grid.Column>
-              <Grid.Column>
-                <Segment>3</Segment>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
-        <Container>
-          <Grid columns='equal'>
-            <Grid.Row>
-              <Grid.Column>
-                <Button primary>Primary</Button>
-                <Button secondary>Secondary</Button>
-              </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-              <Grid.Column>
-                Save this for me
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Container>
-      </div>
-    );
+      <Grid columns={2}>
+        <Grid.Column>
+          <Dropdown
+            onChange={this.handleChange}
+            options={options}
+            placeholder='Choose an option'
+            selection
+            value={value}
+          />
+        </Grid.Column>
+        <Grid.Column>
+          <Segment secondary>
+            <pre>Current value: {value}</pre>
+          </Segment>
+        </Grid.Column>
+      </Grid>
+    )
   }
 }

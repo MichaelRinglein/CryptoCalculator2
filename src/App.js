@@ -6,18 +6,35 @@ const marginTop = {
   marginTop: 30,
 }
 
-const options = [
-  { key: '.com', text: '.com', value: '.com' },
-  { key: '.net', text: '.net', value: '.net' },
-  { key: '.org', text: '.org', value: '.org' },
-]
-
 var apiURL = 'https://api.coinmarketcap.com/v1/ticker/?limit=200';
 var xhr = new XMLHttpRequest();
 xhr.open('GET', apiURL, false);
 xhr.send();
 var data = JSON.parse(xhr.responseText);
 console.log(xhr.status);
+
+const coinOptions = [
+  {
+    key: 'Choose...',
+    text: 'Choose...',
+    value: 'custom',
+  },
+  {
+    key: 'BTC',
+    text: 'BTC',
+    value: 'BTC',
+  },
+  {
+    key: 'ETH',
+    text: 'ETH',
+    value: 'ETH',
+  },
+  {
+    key: 'XRP',
+    text: 'XRP',
+    value: 'XRP',
+  }
+]
 
 class App extends Component {
   constructor(props) {
@@ -28,21 +45,26 @@ class App extends Component {
       amountSUB: '0',
       amountDATA: '0',
       amountINT: '0',
+      amountCustom: '0',
+      selection: 'custom',
       rateDRGN: '',
       rateIOTA: '',
       rateSUB: '',
       rateDATA: '',
       rateINT:'',
+      rateCustom: '',
       rateDRGNPrint: '',
       rateIOTAPrint: '',
       rateSUBPrint: '',
       rateDATAPrint: '',
       rateINTPrint: '',
+      rateCustomPrint: '',
       valueDRGN: '0',
       valueIOTA: '0',
       valueSUB: '0',
       valueDATA: '0',
       valueINT: '0',
+      valueCustom: '0',
       valueAll: '0'
     };
 
@@ -51,6 +73,8 @@ class App extends Component {
     this.handleChangeSUB = this.handleChangeSUB.bind(this);
     this.handleChangeDATA = this.handleChangeDATA.bind(this);
     this.handleChangeINT = this.handleChangeINT.bind(this);
+    this.handleChangeCustomAmount = this.handleChangeCustomAmount.bind(this);
+    this.handleChangeSelection = this.handleChangeSelection.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -79,9 +103,14 @@ class App extends Component {
     console.log('INT: ' + this.state.amountINT);
   }
 
-  // handleChangeCustom(event){
-  //   this.
-  // }
+  handleChangeCustomAmount(event) {
+    this.setState({amountCustom: event.target.value});
+    console.log('Cusom selected: ' + this.state.amountCustom);
+  }
+
+  handleChangeSelection(e, {value}) {
+    this.setState({selection: value});
+  }
 
   handleSubmit(event) {
     //calculate DRGN
@@ -91,8 +120,7 @@ class App extends Component {
         var rateDRGNPrint = ('($ ' + rateDRGN + ')');
         const resultCalcRawDRGN = parseFloat(rateDRGN) * parseFloat(this.state.amountDRGN);
         const resultCalcDRGN = resultCalcRawDRGN.toFixed(2);
-        console.log('DRGN: ' + this.state.amountDRGN + " | Rate: " + rateDRGN + ' | ' + resultCalcRawDRGN);
-        console.log("DRGN: You have Dragon's in worth of " + resultCalcDRGN + " Dollar");
+        console.log('DRGN: ' + this.state.amountDRGN + " | Rate: " + rateDRGN + ' | ' + resultCalcRawDRGN + " | You have Dragon's in worth of " + resultCalcDRGN + " Dollar");
         this.setState ( {
           rateDRGN: rateDRGN,
           rateDRGNPrint: rateDRGNPrint,
@@ -107,8 +135,7 @@ class App extends Component {
         var rateIOTAPrint = ('($ ' + rateIOTA + ')');
         const resultCalcRawIOTA = parseFloat(rateIOTA) * parseFloat(this.state.amountIOTA);
         const resultCalcIOTA = resultCalcRawIOTA.toFixed(2);
-        console.log('IOTA: ' + this.state.amountIOTA + " | Rate: " + rateIOTA + ' | ' + resultCalcRawIOTA);
-        console.log("IOTA: You have IOTA's in worth of " + resultCalcIOTA + " Dollar");
+        console.log('IOTA: ' + this.state.amountIOTA + " | Rate: " + rateIOTA + ' | ' + resultCalcRawIOTA + " | You have IOTA's in worth of " + resultCalcIOTA + " Dollar");
         this.setState ( {
           rateIOTA: rateIOTA,
           rateIOTAPrint: rateIOTAPrint,
@@ -123,8 +150,7 @@ class App extends Component {
         var rateSUBPrint = ('($ ' + rateSUB + ')');
         const resultCalcRawSUB = parseFloat(rateSUB) * parseFloat(this.state.amountSUB);
         const resultCalcSUB = resultCalcRawSUB.toFixed(2);
-        console.log('SUB: ' + this.state.amountSUB + " | Rate: " + rateSUB + ' | ' + resultCalcRawSUB);
-        console.log("SUB: You have SUB's in worth of " + resultCalcSUB + " Dollar");
+        console.log('SUB: ' + this.state.amountSUB + " | Rate: " + rateSUB + ' | ' + resultCalcRawSUB + " | You have SUB's in worth of " + resultCalcSUB + " Dollar");
         this.setState ( {
           rateSUB: rateSUB,
           rateSUBPrint: rateSUBPrint,
@@ -139,8 +165,7 @@ class App extends Component {
         var rateDATAPrint = ('($ ' + rateDATA + ')');
         const resultCalcRawDATA = parseFloat(rateDATA) * parseFloat(this.state.amountDATA);
         const resultCalcDATA = resultCalcRawDATA.toFixed(2);
-        console.log('DATA: ' + this.state.amountDATA + " | Rate: " + rateDATA + ' | ' + resultCalcRawDATA);
-        console.log("DATA: You have DATA's in worth of " + resultCalcDATA + " Dollar");
+        console.log('DATA: ' + this.state.amountDATA + " | Rate: " + rateDATA + ' | ' + resultCalcRawDATA + " | You have DATA's in worth of " + resultCalcDATA + " Dollar");
         this.setState ( {
           rateDATA: rateDATA,
           rateDATAPrint: rateDATAPrint,
@@ -155,12 +180,26 @@ class App extends Component {
         var rateINTPrint = ('($ ' + rateINT + ')');
         const resultCalcRawINT = parseFloat(rateINT) * parseFloat(this.state.amountINT);
         const resultCalcINT = resultCalcRawINT.toFixed(2);
-        console.log('INT: ' + this.state.amountINT + " | Rate: " + rateINT + ' | ' + resultCalcRawINT);
-        console.log("INT: You have INT's in worth of " + resultCalcINT + " Dollar");
+        console.log('INT: ' + this.state.amountINT + " | Rate: " + rateINT + ' | ' + resultCalcRawINT + " | You have INT's in worth of " + resultCalcINT + " Dollar");
         this.setState ({
           rateINT: rateINT,
           rateINTPrint: rateINTPrint,
           valueINT: resultCalcINT
+        });
+      }
+    };
+    //calculate Custom
+    for(var i = 0; i < data.length; i++) {
+      if(data[i].symbol === this.state.selection) {
+        var rateCustom = data[i].price_usd;
+        var rateCustomPrint = ('($' + rateCustom + ')');
+        const resultCalcRawCustom = parseFloat(rateCustom) * parseFloat(this.state.amountCustom);
+        const resultCalcCustom = resultCalcRawCustom.toFixed(2);
+        console.log('Custom choice is ' + this.state.selection + " | Rate: " + rateCustom + " | " + resultCalcRawCustom + " | You have " + this.state.selection + " in worth of " + resultCalcCustom + "Dollar");
+        this.setState({
+          rateCustom: rateCustom,
+          rateCustomPrint: rateCustomPrint,
+          valueCustom: resultCalcCustom
         });
       }
     };
@@ -173,12 +212,14 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.selection);
     var calcAll = (
       Number(this.state.valueDRGN) +
       Number(this.state.valueIOTA) +
       Number(this.state.valueSUB) +
       Number(this.state.valueDATA) +
-      Number(this.state.valueINT)).toFixed(2);
+      Number(this.state.valueINT)+
+      Number(this.state.valueCustom)).toFixed(2);
     return (
       <div className="App">
       <Menu pointing>
@@ -276,15 +317,17 @@ class App extends Component {
               <Segment.Group horizontal>
                 <Segment>
                   <Image
-                    src={require('./icons/int@2x.png')}
+                    src={require('./icons/' + this.state.selection + '@2x.png')}
                     centered
                   />
-                  <Header as='h4'>Custom</Header>
-                  {this.state.rateINTPrint}
+                  <Header as='h4'>
+                    <Dropdown inline options={coinOptions} value={this.state.value} onChange={this.handleChangeSelection} defaultValue={coinOptions[0].value} />
+                  </Header>
+                  {this.state.rateCustom}
                 </Segment>
                 <Segment>
-                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeINT} className="form-control"  placeholder="Enter amount"/>
-                  <Header as='h3'>$ {this.state.valueINT}</Header>
+                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeCustomAmount} className="form-control"  placeholder="Enter amount"/>
+                  <Header as='h3'>$ {this.state.valueCustom}</Header>
                 </Segment>
               </Segment.Group>
             </Grid.Column>
