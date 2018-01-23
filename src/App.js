@@ -355,26 +355,44 @@ class App extends Component {
       amountDATA: '0',
       amountINT: '0',
       amountCustom: '0',
+      amountCustom2: '0',
+      amountCustom3: '0',
+      amountCustom4: '0',
       selection: 'CUSTOM',
+      selection2: 'CUSTOM',
+      selection3: 'CUSTOM',
+      selection4: 'CUSTOM',
       rateDRGN: '',
       rateIOTA: '',
       rateSUB: '',
       rateDATA: '',
       rateINT:'',
       rateCustom: '',
+      rateCustom2: '',
+      rateCustom3: '',
+      rateCustom4: '',
       rateDRGNPrint: '',
       rateIOTAPrint: '',
       rateSUBPrint: '',
       rateDATAPrint: '',
       rateINTPrint: '',
       rateCustomPrint: '',
+      rateCustomPrint2: '',
+      rateCustomPrint3: '',
+      rateCustomPrint4: '',
       valueDRGN: '0',
       valueIOTA: '0',
       valueSUB: '0',
       valueDATA: '0',
       valueINT: '0',
       valueCustom: '0',
-      valueAll: '0'
+      valueCustom2: '0',
+      valueCustom3: '0',
+      valueCustom4: '0',
+      valueAll: '0',
+      addAnotherCoin: false,
+      removeAnotherCoin: false,
+      counter: 1
     };
 
     this.handleChangeDRGN = this.handleChangeDRGN.bind(this);
@@ -383,7 +401,15 @@ class App extends Component {
     this.handleChangeDATA = this.handleChangeDATA.bind(this);
     this.handleChangeINT = this.handleChangeINT.bind(this);
     this.handleChangeCustomAmount = this.handleChangeCustomAmount.bind(this);
+    this.handleChangeCustomAmount2 = this.handleChangeCustomAmount2.bind(this);
+    this.handleChangeCustomAmount3 = this.handleChangeCustomAmount3.bind(this);
+    this.handleChangeCustomAmount4 = this.handleChangeCustomAmount4.bind(this);
     this.handleChangeSelection = this.handleChangeSelection.bind(this);
+    this.handleChangeSelection2 = this.handleChangeSelection2.bind(this);
+    this.handleChangeSelection3 = this.handleChangeSelection3.bind(this);
+    this.handleChangeSelection4 = this.handleChangeSelection4.bind(this);
+    this.handleAddAnotherCoin = this.handleAddAnotherCoin.bind(this);
+    this.handleRemoveAnotherCoin = this.handleRemoveAnotherCoin.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -435,12 +461,126 @@ class App extends Component {
     console.log('Custom: ' + this.state.amountCustom);
   }
 
+  handleChangeCustomAmount2(event) {
+    if(event.target.value == '') {
+      event.target.value = 0
+    }
+    this.setState({amountCustom2: event.target.value});
+    console.log('Custom2: ' + this.state.amountCustom2);
+  }
+
+  handleChangeCustomAmount3(event){
+    if(event.target.value == '') {
+      event.target.value = 0
+    }
+    this.setState({amountCustom3: event.target.value});
+    console.log('Custom3: ' + this.state.amountCustom3);
+  }
+
+  handleChangeCustomAmount4(event){
+    if(event.target.value == '') {
+      event.target.value = 0
+    }
+    this.setState({amountCustom4: event.target.value});
+    console.log('Custom4: ' + this.state.amountCustom4);
+  }
+
   handleChangeSelection(e, {value}) {
     this.setState({selection: value});
     console.log('this.state.selection is: ' + this.state.selection);
   }
 
+  handleChangeSelection2(e, {value}) {
+    this.setState({selection2: value});
+    console.log('this.state.selection2 is: ' + this.state.selection2);
+  }
+
+  handleChangeSelection3(e, {value}){
+    this.setState({selection3: value});
+    console.log('this.state.selection3 is: ' + this.state.selection3);
+  }
+
+  handleChangeSelection4(e, {value}){
+    this.setState({selection4: value});
+  }
+
+  handleAddAnotherCoin() {
+    this.setState(prevState => ({
+      addAnotherCoin: !prevState.addAnotherCoin,
+      counter: prevState.counter + 1
+    }));
+    alert('Counter is ' + this.state.counter);
+  }
+
+  handleRemoveAnotherCoin(){
+    this.setState(prevState => ({
+      removeAnotherCoin: !prevState.removeAnotherCoin,
+      counter: prevState.counter -1
+    }));
+    alert('Counter is ' + this.state.counter);
+  }
+
   handleSubmit(event) {
+    //calculate Custom
+    for(var i = 0; i < data.length; i++) {
+      if(data[i].symbol == this.state.selection) {
+        var rateCustom = data[i].price_usd;
+        var rateCustomPrint = ('($' + rateCustom + ')');
+        const resultCalcRawCustom = parseFloat(rateCustom) * parseFloat(this.state.amountCustom);
+        const resultCalcCustom = resultCalcRawCustom.toFixed(2);
+        console.log('Custom choice is ' + this.state.selection + " | Rate: " + rateCustom + " | " + resultCalcRawCustom + " | You have " + this.state.selection + " in worth of " + resultCalcCustom + "Dollar");
+        this.setState({
+          rateCustom: rateCustom,
+          rateCustomPrint: rateCustomPrint,
+          valueCustom: resultCalcCustom
+        });
+      }
+    };
+    //calculate Custom2
+    for(var i = 0; i < data.length; i++) {
+      if(data[i].symbol == this.state.selection2) {
+        var rateCustom2 = data[i].price_usd;
+        var rateCustomPrint2 = ('($' + rateCustom2 + ')');
+        const resultCalcRawCustom2 = parseFloat(rateCustom2) * parseFloat(this.state.amountCustom2);
+        const resultCalcCustom2 = resultCalcRawCustom2.toFixed(2);
+        console.log('Custom choice is ' + this.state.selection2 + " | Rate: " + rateCustom2 + " | " + resultCalcRawCustom2 + " | You have " + this.state.selection2 + " in worth of " + resultCalcCustom2 + "Dollar");
+        this.setState({
+          rateCustom2: rateCustom2,
+          rateCustomPrint2: rateCustomPrint2,
+          valueCustom2: resultCalcCustom2
+        });
+      }
+    };
+    //calculate Custom3
+    for(var i = 0; i < data.length; i++) {
+      if(data[i].symbol == this.state.selection3) {
+        var rateCustom3 = data[i].price_usd;
+        var rateCustomPrint3 = ('($' + rateCustom3 + ')');
+        const resultCalcRawCustom3 = parseFloat(rateCustom3) * parseFloat(this.state.amountCustom3);
+        const resultCalcCustom3 = resultCalcRawCustom3.toFixed(2);
+        console.log('Custom choice is ' + this.state.selection3 + " | Rate: " + rateCustom3 + " | " + resultCalcRawCustom3 + " | You have " + this.state.selection3 + " in worth of " + resultCalcCustom3 + "Dollar");
+        this.setState({
+          rateCustom3: rateCustom3,
+          rateCustomPrint3: rateCustomPrint3,
+          valueCustom3: resultCalcCustom3
+        });
+      }
+    };
+    //calculate Custom3
+    for(var i = 0; i < data.length; i++) {
+      if(data[i].symbol == this.state.selection4) {
+        var rateCustom4 = data[i].price_usd;
+        var rateCustomPrint4 = ('($' + rateCustom4 + ')');
+        const resultCalcRawCustom4 = parseFloat(rateCustom4) * parseFloat(this.state.amountCustom4);
+        const resultCalcCustom4 = resultCalcRawCustom4.toFixed(2);
+        console.log('Custom choice is ' + this.state.selection4 + " | Rate: " + rateCustom4 + " | " + resultCalcRawCustom4 + " | You have " + this.state.selection4 + " in worth of " + resultCalcCustom4 + "Dollar");
+        this.setState({
+          rateCustom4: rateCustom4,
+          rateCustomPrint4: rateCustomPrint4,
+          valueCustom4: resultCalcCustom4
+        });
+      }
+    };
     //calculate DRGN
     for(var i = 0; i < data.length; i++) {
       if(data[i].symbol === 'DRGN') {
@@ -516,23 +656,7 @@ class App extends Component {
         });
       }
     };
-    //calculate Custom
-    for(var i = 0; i < data.length; i++) {
-      if(data[i].symbol == this.state.selection) {
-        var rateCustom = data[i].price_usd;
-        var rateCustomPrint = ('($' + rateCustom + ')');
-        const resultCalcRawCustom = parseFloat(rateCustom) * parseFloat(this.state.amountCustom);
-        const resultCalcCustom = resultCalcRawCustom.toFixed(2);
-        console.log('Custom choice is ' + this.state.selection + " | Rate: " + rateCustom + " | " + resultCalcRawCustom + " | You have " + this.state.selection + " in worth of " + resultCalcCustom + "Dollar");
-        this.setState({
-          rateCustom: rateCustom,
-          rateCustomPrint: rateCustomPrint,
-          valueCustom: resultCalcCustom
-        });
-      }
-    };
-
-    //sandthis.setState({valueAll: calcAll});
+    //this.setState({valueAll: calcAll});
     console.log(this.state.valueAll);
     console.log(this.props.children);
 
@@ -546,8 +670,11 @@ class App extends Component {
       Number(this.state.valueIOTA) +
       Number(this.state.valueSUB) +
       Number(this.state.valueDATA) +
-      Number(this.state.valueINT)+
-      Number(this.state.valueCustom)).toFixed(2);
+      Number(this.state.valueINT) +
+      Number(this.state.valueCustom) +
+      Number(this.state.valueCustom2) +
+      Number(this.state.valueCustom3) +
+      Number(this.state.valueCustom4)).toFixed(2);
     return (
       <div className="App">
       <Menu pointing>
@@ -563,15 +690,17 @@ class App extends Component {
                 <Segment.Group horizontal>
                   <Segment>
                     <Image
-                      src={require('./icons/DRGN@2X.PNG')}
+                      src={require('./icons/' + this.state.selection + '@2X.PNG')}
                       centered
                     />
-                    <Header as='h4'>Dragonchain</Header>
-                    {this.state.rateDRGNPrint}
+                    <Header as='h4'>
+                      <Dropdown inline options={coinOptions} value={this.state.value} onChange={this.handleChangeSelection} defaultValue={coinOptions[0].value} />
+                    </Header>
+                    {this.state.rateCustomPrint}
                   </Segment>
                   <Segment>
-                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeDRGN} className="form-control"  placeholder="Enter amount"/>
-                    <Header as='h3'>$ {this.state.valueDRGN}</Header>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeCustomAmount} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueCustom}</Header>
                   </Segment>
                 </Segment.Group>
               </Grid.Column>
@@ -579,18 +708,74 @@ class App extends Component {
                 <Segment.Group horizontal>
                   <Segment>
                     <Image
-                      src={require('./icons/MIOTA@2X.PNG')}
+                      src={require('./icons/' + this.state.selection2 + '@2X.PNG')}
                       centered
                     />
-                    <Header as='h4'>IOTA</Header>
-                    {this.state.rateIOTAPrint}
+                    <Header as='h4'>
+                      <Dropdown inline options={coinOptions} value={this.state.value} onChange={this.handleChangeSelection2} defaultValue={coinOptions[0].value} />
+                    </Header>
+                    {this.state.rateCustomPrint2}
                   </Segment>
                   <Segment>
-                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeIOTA} className="form-control"  placeholder="Enter amount"/>
-                    <Header as='h3'>$ {this.state.valueIOTA}</Header>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeCustomAmount2} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueCustom2}</Header>
                   </Segment>
                 </Segment.Group>
               </Grid.Column>
+              <Grid.Column>
+                <Segment.Group horizontal>
+                  <Segment>
+                    <Image
+                      src={require('./icons/' + this.state.selection3 + '@2X.PNG')}
+                      centered
+                    />
+                    <Header as='h4'>
+                      <Dropdown inline options={coinOptions} value={this.state.value} onChange={this.handleChangeSelection3} defaultValue={coinOptions[0].value} />
+                    </Header>
+                    {this.state.rateCustomPrint3}
+                  </Segment>
+                  <Segment>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeCustomAmount3} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueCustom3}</Header>
+                  </Segment>
+                </Segment.Group>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid columns={3}>
+            <Grid.Row>
+            {
+              this.state.addAnotherCoin?
+                <Grid.Column>
+                  <Segment.Group horizontal>
+                    <Segment>
+                      <Image
+                        src={require('./icons/' + this.state.selection4 + '@2X.PNG')}
+                        centered
+                      />
+                      <Header as='h4'>
+                        <Dropdown inline options={coinOptions} value={this.state.value} onChange={this.handleChangeSelection4} defaultValue={coinOptions[0].value} />
+                      </Header>
+                      {this.state.rateCustomPrint4}
+                    </Segment>
+                    <Segment>
+                      <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeCustomAmount4} className="form-control"  placeholder="Enter amount"/>
+                      <Header as='h3'>$ {this.state.valueCustom4}</Header>
+                    </Segment>
+                  </Segment.Group>
+                </Grid.Column>
+              :
+              <div></div>
+
+            }
+            </Grid.Row>
+            </Grid>
+            <Grid.Row>
+               <Grid.Column floated='right'>
+                <Button secondary circular icon='minus' floated='right' onClick={this.handleRemoveAnotherCoin}/>
+                <Button secondary circular icon='plus' floated='right' onClick={this.handleAddAnotherCoin}/>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
               <Grid.Column>
                 <Segment.Group horizontal>
                   <Segment>
@@ -607,58 +792,38 @@ class App extends Component {
                   </Segment>
                 </Segment.Group>
               </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-            <Grid.Column>
-              <Segment.Group horizontal>
-                <Segment>
-                  <Image
-                    src={require('./icons/DATA@2X.PNG')}
-                    centered
-                  />
-                  <Header as='h4'>DATA</Header>
-                  {this.state.rateDATAPrint}
-                </Segment>
-                <Segment>
-                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeDATA} className="form-control"  placeholder="Enter amount"/>
-                  <Header as='h3'>$ {this.state.valueDATA}</Header>
-                </Segment>
-              </Segment.Group>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment.Group horizontal>
-                <Segment>
-                  <Image
-                    src={require('./icons/INT@2X.PNG')}
-                    centered
-                  />
-                  <Header as='h4'>INT</Header>
-                  {this.state.rateINTPrint}
-                </Segment>
-                <Segment>
-                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeINT} className="form-control"  placeholder="Enter amount"/>
-                  <Header as='h3'>$ {this.state.valueINT}</Header>
-                </Segment>
-              </Segment.Group>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment.Group horizontal>
-                <Segment>
-                  <Image
-                    src={require('./icons/' + this.state.selection + '@2X.PNG')}
-                    centered
-                  />
-                  <Header as='h4'>
-                    <Dropdown inline options={coinOptions} value={this.state.value} onChange={this.handleChangeSelection} defaultValue={coinOptions[0].value} />
-                  </Header>
-                  {this.state.rateCustomPrint}
-                </Segment>
-                <Segment>
-                  <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeCustomAmount} className="form-control"  placeholder="Enter amount"/>
-                  <Header as='h3'>$ {this.state.valueCustom}</Header>
-                </Segment>
-              </Segment.Group>
-            </Grid.Column>
+              <Grid.Column>
+                <Segment.Group horizontal>
+                  <Segment>
+                    <Image
+                      src={require('./icons/DATA@2X.PNG')}
+                      centered
+                    />
+                    <Header as='h4'>DATA</Header>
+                    {this.state.rateDATAPrint}
+                  </Segment>
+                  <Segment>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeDATA} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueDATA}</Header>
+                  </Segment>
+                </Segment.Group>
+              </Grid.Column>
+              <Grid.Column>
+                <Segment.Group horizontal>
+                  <Segment>
+                    <Image
+                      src={require('./icons/INT@2X.PNG')}
+                      centered
+                    />
+                    <Header as='h4'>INT</Header>
+                    {this.state.rateINTPrint}
+                  </Segment>
+                  <Segment>
+                    <Input type="number" step="0.001" value={this.state.value} onChange={this.handleChangeINT} className="form-control"  placeholder="Enter amount"/>
+                    <Header as='h3'>$ {this.state.valueINT}</Header>
+                  </Segment>
+                </Segment.Group>
+              </Grid.Column>
             </Grid.Row>
             <Grid.Row>
               <Grid.Column>
