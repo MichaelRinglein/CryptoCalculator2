@@ -37,3 +37,7 @@
 h4.ui.header {
     margin-top: 0.5rem;
 }
+
+.form-control {
+  width: 130px;
+}

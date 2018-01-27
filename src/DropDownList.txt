@@ -1,0 +1,306 @@
+getCryptoJSON.html:30 [Deprecation] Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience. For more help, check https://xhr.spec.whatwg.org/.
+(anonymous) @ getCryptoJSON.html:30
+getCryptoJSON.html:23 success, data is here
+getCryptoJSON.html:38 (300) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, …]
+getCryptoJSON.html:408 (171) ["ardr", "ark", "atm", "bat", "bay", "bcc", "bch", "bcn", "bdl", "blcn", "block", "bnb", "bnt", "bq", "bqx", "btc", "btcd", "btcz", "btg", "btm", "bts", "btx", "cnx", "cny", "cvc", "dash", "data", "dbc", "dcn", "dcr", "dent", "dgb", "dgd", "doge", "drgn", "edg", "edoge", "elf", "emc", "emc2", "eng", "eos", "etc", "eth", "ethos", "etn", "etp", "eur", "evx", "exmo", "fair", "fct", "fil", "fun", "game", "gas", "gbp", "gbx", "gbyte", "gno", "gnt", "grs", "gup", "gxs", "hsr", "hush", "icn", "icx", "jpy", "kcs", "kin", "kmd", "knc", "krb", "lbc", "link", "lkk", "lrc", "lsk", "ltc", "maid", "mana", "mcap", "mco", "miota", "mln", "mnx", "mona", "mtl", "music", "nav", "nebl", "neo", "nlc2", "nlg", "nmc", "nxs", "nxt", "omg", "part", …]
+getCryptoJSON.html:409 171
+getCryptoJSON.html:415 <Item label="0x" value="ZRX" />
+getCryptoJSON.html:415 <Item label="ATMChain" value="ATM" />
+getCryptoJSON.html:415 <Item label="Achain" value="ACT" />
+getCryptoJSON.html:415 <Item label="AdEx" value="ADX" />
+getCryptoJSON.html:415 <Item label="Aeon" value="AEON" />
+getCryptoJSON.html:415 <Item label="Aeternity" value="AE" />
+getCryptoJSON.html:415 <Item label="Agoras Tokens" value="AGRS" />
+getCryptoJSON.html:415 <Item label="Agrello" value="DLT" />
+getCryptoJSON.html:415 <Item label="Aion" value="AION" />
+getCryptoJSON.html:415 <Item label="AirSwap" value="AST" />
+getCryptoJSON.html:415 <Item label="Ambrosus" value="AMB" />
+getCryptoJSON.html:415 <Item label="AppCoins" value="APPC" />
+getCryptoJSON.html:415 <Item label="Aragon" value="ANT" />
+getCryptoJSON.html:415 <Item label="Ardor" value="ARDR" />
+getCryptoJSON.html:415 <Item label="Ark" value="ARK" />
+getCryptoJSON.html:415 <Item label="Asch" value="XAS" />
+getCryptoJSON.html:415 <Item label="Augur" value="REP" />
+getCryptoJSON.html:415 <Item label="BLOCKv" value="VEE" />
+getCryptoJSON.html:415 <Item label="Bancor" value="BNT" />
+getCryptoJSON.html:415 <Item label="Basic Attention Token" value="BAT" />
+getCryptoJSON.html:415 <Item label="Bibox Token" value="BIX" />
+getCryptoJSON.html:415 <Item label="Binance Coin" value="BNB" />
+getCryptoJSON.html:415 <Item label="BitBay" value="BAY" />
+getCryptoJSON.html:415 <Item label="BitClave" value="CAT" />
+getCryptoJSON.html:415 <Item label="BitConnect" value="BCC" />
+getCryptoJSON.html:415 <Item label="BitDegree" value="BDG" />
+getCryptoJSON.html:415 <Item label="BitShares" value="BTS" />
+getCryptoJSON.html:415 <Item label="Bitcoin" value="BTC" />
+getCryptoJSON.html:415 <Item label="Bitcoin Cash" value="BCH" />
+getCryptoJSON.html:415 <Item label="Bitcoin Gold" value="BTG" />
+getCryptoJSON.html:415 <Item label="BitcoinDark" value="BTCD" />
+getCryptoJSON.html:415 <Item label="Bitcore" value="BTX" />
+getCryptoJSON.html:415 <Item label="BlackCoin" value="BLK" />
+getCryptoJSON.html:415 <Item label="BlockMason Credit Protocol" value="BCPT" />
+getCryptoJSON.html:415 <Item label="Blocknet" value="BLOCK" />
+getCryptoJSON.html:415 <Item label="Blocktix" value="TIX" />
+getCryptoJSON.html:415 <Item label="Bloom" value="BLT" />
+getCryptoJSON.html:415 <Item label="Bread" value="BRD" />
+getCryptoJSON.html:415 <Item label="BridgeCoin" value="BCO" />
+getCryptoJSON.html:415 <Item label="Burst" value="BURST" />
+getCryptoJSON.html:415 <Item label="Byteball Bytes" value="GBYTE" />
+getCryptoJSON.html:415 <Item label="Bytecoin" value="BCN" />
+getCryptoJSON.html:415 <Item label="Bytom" value="BTM" />
+getCryptoJSON.html:415 <Item label="COSS" value="COSS" />
+getCryptoJSON.html:415 <Item label="CanYaCoin" value="CAN" />
+getCryptoJSON.html:415 <Item label="Cappasity" value="CAPP" />
+getCryptoJSON.html:415 <Item label="Cardano" value="ADA" />
+getCryptoJSON.html:415 <Item label="Centra" value="CTR" />
+getCryptoJSON.html:415 <Item label="ChainLink" value="LINK" />
+getCryptoJSON.html:415 <Item label="Cindicator" value="CND" />
+getCryptoJSON.html:415 <Item label="Civic" value="CVC" />
+getCryptoJSON.html:415 <Item label="CloakCoin" value="CLOAK" />
+getCryptoJSON.html:415 <Item label="Cobinhood" value="COB" />
+getCryptoJSON.html:415 <Item label="Cofound.it" value="CFI" />
+getCryptoJSON.html:415 <Item label="CoinDash" value="CDT" />
+getCryptoJSON.html:415 <Item label="Counterparty" value="XCP" />
+getCryptoJSON.html:415 <Item label="Covesting" value="COV" />
+getCryptoJSON.html:415 <Item label="Crown" value="CRW" />
+getCryptoJSON.html:415 <Item label="Cryptonex" value="CNX" />
+getCryptoJSON.html:415 <Item label="CyberMiles" value="CMT" />
+getCryptoJSON.html:415 <Item label="DECENT" value="DCT" />
+getCryptoJSON.html:415 <Item label="DEW" value="DEW" />
+getCryptoJSON.html:415 <Item label="Dash" value="DASH" />
+getCryptoJSON.html:415 <Item label="Datum" value="DAT" />
+getCryptoJSON.html:415 <Item label="Decentraland" value="MANA" />
+getCryptoJSON.html:415 <Item label="Decision Token" value="HST" />
+getCryptoJSON.html:415 <Item label="Decred" value="DCR" />
+getCryptoJSON.html:415 <Item label="DeepBrain Chain" value="DBC" />
+getCryptoJSON.html:415 <Item label="DeepOnion" value="ONION" />
+getCryptoJSON.html:415 <Item label="Delphy" value="DPY" />
+getCryptoJSON.html:415 <Item label="Dent" value="DENT" />
+getCryptoJSON.html:415 <Item label="Dentacoin" value="DCN" />
+getCryptoJSON.html:415 <Item label="Diamond" value="DMD" />
+getCryptoJSON.html:415 <Item label="DigiByte" value="DGB" />
+getCryptoJSON.html:415 <Item label="DigitalNote" value="XDN" />
+getCryptoJSON.html:415 <Item label="DigixDAO" value="DGD" />
+getCryptoJSON.html:415 <Item label="Dimecoin" value="DIME" />
+getCryptoJSON.html:415 <Item label="Divi" value="DIVX" />
+getCryptoJSON.html:415 <Item label="Dogecoin" value="DOGE" />
+getCryptoJSON.html:415 <Item label="DomRaider" value="DRT" />
+getCryptoJSON.html:415 <Item label="Dragonchain" value="DRGN" />
+getCryptoJSON.html:415 <Item label="Dynamic Trading Rights" value="DTR" />
+getCryptoJSON.html:415 <Item label="E-coin" value="ECN" />
+getCryptoJSON.html:415 <Item label="ECC" value="ECC" />
+getCryptoJSON.html:415 <Item label="EOS" value="EOS" />
+getCryptoJSON.html:415 <Item label="ETHLend" value="LEND" />
+getCryptoJSON.html:415 <Item label="Edgeless" value="EDG" />
+getCryptoJSON.html:415 <Item label="Eidoo" value="EDO" />
+getCryptoJSON.html:415 <Item label="Einsteinium" value="EMC2" />
+getCryptoJSON.html:415 <Item label="Elastic" value="XEL" />
+getCryptoJSON.html:415 <Item label="Electra" value="ECA" />
+getCryptoJSON.html:415 <Item label="Electroneum" value="ETN" />
+getCryptoJSON.html:415 <Item label="Emercoin" value="EMC" />
+getCryptoJSON.html:415 <Item label="EncrypGen" value="DNA" />
+getCryptoJSON.html:415 <Item label="Enigma" value="ENG" />
+getCryptoJSON.html:415 <Item label="Enjin Coin" value="ENJ" />
+getCryptoJSON.html:415 <Item label="Ethereum" value="ETH" />
+getCryptoJSON.html:415 <Item label="Ethereum Classic" value="ETC" />
+getCryptoJSON.html:415 <Item label="Etherparty" value="FUEL" />
+getCryptoJSON.html:415 <Item label="Ethos" value="ETHOS" />
+getCryptoJSON.html:415 <Item label="Everex" value="EVX" />
+getCryptoJSON.html:415 <Item label="Expanse" value="EXP" />
+getCryptoJSON.html:415 <Item label="Experience Points" value="XP" />
+getCryptoJSON.html:415 <Item label="Factom" value="FCT" />
+getCryptoJSON.html:415 <Item label="FairCoin" value="FAIR" />
+getCryptoJSON.html:415 <Item label="Feathercoin" value="FTC" />
+getCryptoJSON.html:415 <Item label="FirstBlood" value="1ST" />
+getCryptoJSON.html:415 <Item label="Flash" value="FLASH" />
+getCryptoJSON.html:415 <Item label="FunFair" value="FUN" />
+getCryptoJSON.html:415 <Item label="GXShares" value="GXS" />
+getCryptoJSON.html:415 <Item label="Game.com" value="GTC" />
+getCryptoJSON.html:415 <Item label="GameCredits" value="GAME" />
+getCryptoJSON.html:415 <Item label="Gas" value="GAS" />
+getCryptoJSON.html:415 <Item label="Genesis Vision" value="GVT" />
+getCryptoJSON.html:415 <Item label="Gifto" value="GTO" />
+getCryptoJSON.html:415 <Item label="Gnosis" value="GNO" />
+getCryptoJSON.html:415 <Item label="Golem" value="GNT" />
+getCryptoJSON.html:415 <Item label="Grid+" value="GRID" />
+getCryptoJSON.html:415 <Item label="GridCoin" value="GRC" />
+getCryptoJSON.html:415 <Item label="Groestlcoin" value="GRS" />
+getCryptoJSON.html:415 <Item label="Gulden" value="NLG" />
+getCryptoJSON.html:415 <Item label="HTMLCOIN" value="HTML" />
+getCryptoJSON.html:415 <Item label="HelloGold" value="HGT" />
+getCryptoJSON.html:415 <Item label="HempCoin" value="THC" />
+getCryptoJSON.html:415 <Item label="High Performance Blockchain" value="HPB" />
+getCryptoJSON.html:415 <Item label="Hive" value="HVN" />
+getCryptoJSON.html:415 <Item label="Hshare" value="HSR" />
+getCryptoJSON.html:415 <Item label="Humaniq" value="HMQ" />
+getCryptoJSON.html:415 <Item label="I/O Coin" value="IOC" />
+getCryptoJSON.html:415 <Item label="ICON" value="ICX" />
+getCryptoJSON.html:415 <Item label="INS Ecosystem" value="INS" />
+getCryptoJSON.html:415 <Item label="ION" value="ION" />
+getCryptoJSON.html:415 <Item label="IOTA" value="MIOTA" />
+getCryptoJSON.html:415 <Item label="Iconomi" value="ICN" />
+getCryptoJSON.html:415 <Item label="Ink" value="INK" />
+getCryptoJSON.html:415 <Item label="Internet Node Token" value="INT" />
+getCryptoJSON.html:415 <Item label="IoT Chain" value="ITC" />
+getCryptoJSON.html:415 <Item label="Jinn" value="JINN" />
+getCryptoJSON.html:415 <Item label="Karma" value="KRM" />
+getCryptoJSON.html:415 <Item label="Kin" value="KIN" />
+getCryptoJSON.html:415 <Item label="Komodo" value="KMD" />
+getCryptoJSON.html:415 <Item label="KuCoin Shares" value="KCS" />
+getCryptoJSON.html:415 <Item label="Kyber Network" value="KNC" />
+getCryptoJSON.html:415 <Item label="LAToken" value="LA" />
+getCryptoJSON.html:415 <Item label="LBRY Credits" value="LBC" />
+getCryptoJSON.html:415 <Item label="Lamden" value="TAU" />
+getCryptoJSON.html:415 <Item label="Lisk" value="LSK" />
+getCryptoJSON.html:415 <Item label="Litecoin" value="LTC" />
+getCryptoJSON.html:415 <Item label="Loopring" value="LRC" />
+getCryptoJSON.html:415 <Item label="Lunyr" value="LUN" />
+getCryptoJSON.html:415 <Item label="Lykke" value="LKK" />
+getCryptoJSON.html:415 <Item label="MaidSafeCoin" value="MAID" />
+getCryptoJSON.html:415 <Item label="Maker" value="MKR" />
+getCryptoJSON.html:415 <Item label="Matchpool" value="GUP" />
+getCryptoJSON.html:415 <Item label="MediBloc" value="MED" />
+getCryptoJSON.html:415 <Item label="MediShares" value="MDS" />
+getCryptoJSON.html:415 <Item label="Melon" value="MLN" />
+getCryptoJSON.html:415 <Item label="Mercury" value="MER" />
+getCryptoJSON.html:415 <Item label="Metal" value="MTL" />
+getCryptoJSON.html:415 <Item label="Metaverse ETP" value="ETP" />
+getCryptoJSON.html:415 <Item label="MinexCoin" value="MNX" />
+getCryptoJSON.html:415 <Item label="MobileGo" value="MGO" />
+getCryptoJSON.html:415 <Item label="Modum" value="MOD" />
+getCryptoJSON.html:415 <Item label="Moeda Loyalty Points" value="MDA" />
+getCryptoJSON.html:415 <Item label="MonaCoin" value="MONA" />
+getCryptoJSON.html:415 <Item label="Monaco" value="MCO" />
+getCryptoJSON.html:415 <Item label="Monero" value="XMR" />
+getCryptoJSON.html:415 <Item label="Monetha" value="MTH" />
+getCryptoJSON.html:415 <Item label="Mooncoin" value="MOON" />
+getCryptoJSON.html:415 <Item label="Mothership" value="MSP" />
+getCryptoJSON.html:415 <Item label="NAGA" value="NGC" />
+getCryptoJSON.html:415 <Item label="NAV Coin" value="NAV" />
+getCryptoJSON.html:415 <Item label="NEM" value="XEM" />
+getCryptoJSON.html:415 <Item label="NEO" value="NEO" />
+getCryptoJSON.html:415 <Item label="NVO" value="NVST" />
+getCryptoJSON.html:415 <Item label="Namecoin" value="NMC" />
+getCryptoJSON.html:415 <Item label="Neblio" value="NEBL" />
+getCryptoJSON.html:415 <Item label="Nebulas" value="NAS" />
+getCryptoJSON.html:415 <Item label="Neumark" value="NEU" />
+getCryptoJSON.html:415 <Item label="Nexus" value="NXS" />
+getCryptoJSON.html:415 <Item label="Nimiq" value="NET" />
+getCryptoJSON.html:415 <Item label="NuShares" value="NSR" />
+getCryptoJSON.html:415 <Item label="Nuls" value="NULS" />
+getCryptoJSON.html:415 <Item label="Numeraire" value="NMR" />
+getCryptoJSON.html:415 <Item label="Nxt" value="NXT" />
+getCryptoJSON.html:415 <Item label="OmiseGO" value="OMG" />
+getCryptoJSON.html:415 <Item label="Oyster" value="PRL" />
+getCryptoJSON.html:415 <Item label="PACcoin" value="PAC" />
+getCryptoJSON.html:415 <Item label="PIVX" value="PIVX" />
+getCryptoJSON.html:415 <Item label="Particl" value="PART" />
+getCryptoJSON.html:415 <Item label="Pascal Coin" value="PASC" />
+getCryptoJSON.html:415 <Item label="PayPie" value="PPP" />
+getCryptoJSON.html:415 <Item label="Paypex" value="PAYX" />
+getCryptoJSON.html:415 <Item label="Peercoin" value="PPC" />
+getCryptoJSON.html:415 <Item label="Peerplays" value="PPY" />
+getCryptoJSON.html:415 <Item label="Pepe Cash" value="PEPECASH" />
+getCryptoJSON.html:415 <Item label="Pillar" value="PLR" />
+getCryptoJSON.html:415 <Item label="Po.et" value="POE" />
+getCryptoJSON.html:415 <Item label="Populous" value="PPT" />
+getCryptoJSON.html:415 <Item label="PotCoin" value="POT" />
+getCryptoJSON.html:415 <Item label="Power Ledger" value="POWR" />
+getCryptoJSON.html:415 <Item label="Presearch" value="PRS" />
+getCryptoJSON.html:415 <Item label="Propy" value="PRO" />
+getCryptoJSON.html:415 <Item label="Pura" value="PURA" />
+getCryptoJSON.html:415 <Item label="QASH" value="QASH" />
+getCryptoJSON.html:415 <Item label="QLINK" value="QLC" />
+getCryptoJSON.html:415 <Item label="Qtum" value="QTUM" />
+getCryptoJSON.html:415 <Item label="Quantstamp" value="QSP" />
+getCryptoJSON.html:415 <Item label="Quantum Resistant Ledger" value="QRL" />
+getCryptoJSON.html:415 <Item label="RChain" value="RHOC" />
+getCryptoJSON.html:415 <Item label="RaiBlocks" value="XRB" />
+getCryptoJSON.html:415 <Item label="Raiden Network Token" value="RDN" />
+getCryptoJSON.html:415 <Item label="Red Pulse" value="RPX" />
+getCryptoJSON.html:415 <Item label="ReddCoin" value="RDD" />
+getCryptoJSON.html:415 <Item label="Request Network" value="REQ" />
+getCryptoJSON.html:415 <Item label="Revain" value="R" />
+getCryptoJSON.html:415 <Item label="Ripio Credit Network" value="RCN" />
+getCryptoJSON.html:415 <Item label="Ripple" value="XRP" />
+getCryptoJSON.html:415 <Item label="Rise" value="RISE" />
+getCryptoJSON.html:415 <Item label="Rivetz" value="RVT" />
+getCryptoJSON.html:415 <Item label="SALT" value="SALT" />
+getCryptoJSON.html:415 <Item label="SHIELD" value="XSH" />
+getCryptoJSON.html:415 <Item label="SIBCoin" value="SIB" />
+getCryptoJSON.html:415 <Item label="SIRIN LABS Token" value="SRN" />
+getCryptoJSON.html:415 <Item label="SONM" value="SNM" />
+getCryptoJSON.html:415 <Item label="Safe Exchange Coin" value="SAFEX" />
+getCryptoJSON.html:415 <Item label="SaluS" value="SLS" />
+getCryptoJSON.html:415 <Item label="Santiment Network Token" value="SAN" />
+getCryptoJSON.html:415 <Item label="Selfkey" value="KEY" />
+getCryptoJSON.html:415 <Item label="Shift" value="SHIFT" />
+getCryptoJSON.html:415 <Item label="Siacoin" value="SC" />
+getCryptoJSON.html:415 <Item label="Simple Token" value="OST" />
+getCryptoJSON.html:415 <Item label="SingularDTV" value="SNGLS" />
+getCryptoJSON.html:415 <Item label="Skycoin" value="SKY" />
+getCryptoJSON.html:415 <Item label="SmartCash" value="SMART" />
+getCryptoJSON.html:415 <Item label="SolarCoin" value="SLR" />
+getCryptoJSON.html:415 <Item label="SophiaTX" value="SPHTX" />
+getCryptoJSON.html:415 <Item label="SpankChain" value="SPANK" />
+getCryptoJSON.html:415 <Item label="Spectrecoin" value="XSPEC" />
+getCryptoJSON.html:415 <Item label="Status" value="SNT" />
+getCryptoJSON.html:415 <Item label="Steem" value="STEEM" />
+getCryptoJSON.html:415 <Item label="Steem Dollars" value="SBD" />
+getCryptoJSON.html:415 <Item label="Stellar" value="XLM" />
+getCryptoJSON.html:415 <Item label="Storj" value="STORJ" />
+getCryptoJSON.html:415 <Item label="Storm" value="STORM" />
+getCryptoJSON.html:415 <Item label="Stratis" value="STRAT" />
+getCryptoJSON.html:415 <Item label="Streamr DATAcoin" value="DATA" />
+getCryptoJSON.html:415 <Item label="Substratum" value="SUB" />
+getCryptoJSON.html:415 <Item label="SunContract" value="SNC" />
+getCryptoJSON.html:415 <Item label="SuperNET" value="UNITY" />
+getCryptoJSON.html:415 <Item label="Swarm City" value="SWT" />
+getCryptoJSON.html:415 <Item label="Synereo" value="AMP" />
+getCryptoJSON.html:415 <Item label="Syscoin" value="SYS" />
+getCryptoJSON.html:415 <Item label="TRON" value="TRX" />
+getCryptoJSON.html:415 <Item label="TaaS" value="TAAS" />
+getCryptoJSON.html:415 <Item label="Telcoin" value="TEL" />
+getCryptoJSON.html:415 <Item label="TenX" value="PAY" />
+getCryptoJSON.html:415 <Item label="Tether" value="USDT" />
+getCryptoJSON.html:415 <Item label="Theta Token" value="THETA" />
+getCryptoJSON.html:415 <Item label="Tierion" value="TNT" />
+getCryptoJSON.html:415 <Item label="Time New Bank" value="TNB" />
+getCryptoJSON.html:415 <Item label="TokenCard" value="TKN" />
+getCryptoJSON.html:415 <Item label="Trade Token" value="TIO" />
+getCryptoJSON.html:415 <Item label="Triggers" value="TRIG" />
+getCryptoJSON.html:415 <Item label="Trinity Network Credit" value="TNC" />
+getCryptoJSON.html:415 <Item label="UTRUST" value="UTK" />
+getCryptoJSON.html:415 <Item label="Ubiq" value="UBQ" />
+getCryptoJSON.html:415 <Item label="Unikoin Gold" value="UKG" />
+getCryptoJSON.html:415 <Item label="VIBE" value="VIBE" />
+getCryptoJSON.html:415 <Item label="VeChain" value="VEN" />
+getCryptoJSON.html:415 <Item label="Verge" value="XVG" />
+getCryptoJSON.html:415 <Item label="VeriCoin" value="VRC" />
+getCryptoJSON.html:415 <Item label="Veritaseum" value="VERI" />
+getCryptoJSON.html:415 <Item label="Vertcoin" value="VTC" />
+getCryptoJSON.html:415 <Item label="Viacoin" value="VIA" />
+getCryptoJSON.html:415 <Item label="Viberate" value="VIB" />
+getCryptoJSON.html:415 <Item label="Voxels" value="VOX" />
+getCryptoJSON.html:415 <Item label="WAX" value="WAX" />
+getCryptoJSON.html:415 <Item label="WaBi" value="WABI" />
+getCryptoJSON.html:415 <Item label="Wagerr" value="WGR" />
+getCryptoJSON.html:415 <Item label="Walton" value="WTC" />
+getCryptoJSON.html:415 <Item label="Waves" value="WAVES" />
+getCryptoJSON.html:415 <Item label="WeTrust" value="TRST" />
+getCryptoJSON.html:415 <Item label="WhiteCoin" value="XWC" />
+getCryptoJSON.html:415 <Item label="Wings" value="WINGS" />
+getCryptoJSON.html:415 <Item label="Worldcore" value="WRC" />
+getCryptoJSON.html:415 <Item label="XPlay" value="XPA" />
+getCryptoJSON.html:415 <Item label="XTRABYTES" value="XBY" />
+getCryptoJSON.html:415 <Item label="YOYOW" value="YOYOW" />
+getCryptoJSON.html:415 <Item label="ZClassic" value="ZCL" />
+getCryptoJSON.html:415 <Item label="ZCoin" value="XZC" />
+getCryptoJSON.html:415 <Item label="Zcash" value="ZEC" />
+getCryptoJSON.html:415 <Item label="ZenCash" value="ZEN" />
+getCryptoJSON.html:415 <Item label="Zeusshield" value="ZSC" />
+getCryptoJSON.html:415 <Item label="adToken" value="ADT" />
+getCryptoJSON.html:415 <Item label="aelf" value="ELF" />
+getCryptoJSON.html:415 <Item label="bitCNY" value="BITCNY" />
+getCryptoJSON.html:415 <Item label="district0x" value="DNT" />
+getCryptoJSON.html:415 <Item label="iExec RLC" value="RLC" />
+getCryptoJSON.html:415 <Item label="iXledger" value="IXT" />
