@@ -355,7 +355,6 @@ class App extends Component {
       valueCustom4: '0',
       valueCustom5: '0',
       valueCustom6: '0',
-      valueAll: '0',
       Coin1: true,
       Coin2: false,
       Coin3: false,
@@ -628,10 +627,6 @@ class App extends Component {
         });
       }
     };
-
-    console.log(this.state.valueAll);
-    console.log(this.props.children);
-
     event.preventDefault();
   }
 

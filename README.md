@@ -1,3 +1,11 @@
+# Crypto Calculator 2 #
+
+![alt text](screenshots/cryptoApp2.jpg "Screenshot of http://crypto2.michaelringlein.com")
+
+---
+
+Build with React. Designed with Semantic UI. Data from https://coinmarketcap.com/api/.
+
 Live version can be found at http://crypto2.michaelringlein.com/
 
 ---
